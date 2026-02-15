@@ -118,19 +118,19 @@ const ServiceDetailPage = () => {
                     >
                         <div className="relative rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl group">
                             <img
-                                src={service.image || '/images/raid_hero.png'}
+                                src={service.image || 'https://skycoach.gg/storage/uploads/products/salvations-edge-raid1718616296_picture_item_small.png'}
                                 alt={service.imageDescription || service.name}
                                 onError={(e) => {
                                     const categoryImages = {
-                                        'Raids': '/images/raid_hero.png',
-                                        'Trials': '/images/pvp_hero.png',
-                                        'Dungeons': '/images/dungeon_hero.png',
-                                        'PvP': '/images/pvp_hero.png',
-                                        'PvE': '/images/dungeon_hero.png',
-                                        'Exotics': '/images/exotics_hero.png',
-                                        'Crucible': '/images/pvp_hero.png',
-                                        'Titles': '/images/exotics_hero.png',
-                                        'default': '/images/raid_hero.png'
+                                        'Raids': 'https://skycoach.gg/storage/uploads/products/salvations-edge-raid1718616296_picture_item_small.png',
+                                        'Trials': 'https://skycoach.gg/storage/uploads/products/trials-of-osiris-flawless-boost1615822348_picture_item_small.png',
+                                        'Dungeons': 'https://skycoach.gg/storage/uploads/products/vesper-s-host-dungeon1728394467_picture_item_small.png',
+                                        'PvP': 'https://skycoach.gg/storage/uploads/products/trials-of-osiris-flawless-boost1615822348_picture_item_small.png',
+                                        'PvE': 'https://skycoach.gg/storage/uploads/products/vesper-s-host-dungeon1728394467_picture_item_small.png',
+                                        'Exotics': 'https://skycoach.gg/storage/uploads/products/ice-breaker1728395350_picture_item_small.png',
+                                        'Crucible': 'https://skycoach.gg/storage/uploads/products/trials-of-osiris-flawless-boost1615822348_picture_item_small.png',
+                                        'Titles': 'https://skycoach.gg/storage/uploads/products/ice-breaker1728395350_picture_item_small.png',
+                                        'default': 'https://skycoach.gg/storage/uploads/products/salvations-edge-raid1718616296_picture_item_small.png'
                                     };
                                     e.target.src = categoryImages[service.category] || categoryImages['default'];
                                 }}

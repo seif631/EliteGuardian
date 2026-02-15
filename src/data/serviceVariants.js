@@ -1,6 +1,46 @@
 // Service-specific variant configurations
 // Each service can have completely unique options
 // Prices updated to match SkyCoach exactly (converted from EUR to USD at 1.10 rate)
+
+// Global variants that apply to almost every service
+const globalVariants = [
+  {
+    key: 'platform',
+    label: 'Platform',
+    options: [
+      { id: 'pc', label: 'PC', priceAdd: 0 },
+      { id: 'ps5', label: 'PlayStation 5', priceAdd: 0 },
+      { id: 'xbox', label: 'Xbox Series X/S', priceAdd: 0 }
+    ]
+  },
+  {
+    key: 'character',
+    label: 'Character Level',
+    options: [
+      { id: 'level-1', label: 'First Character', priceAdd: 0 },
+      { id: 'level-2', label: 'Second Character', priceAdd: 5.00 },
+      { id: 'level-3', label: 'Third Character', priceAdd: 10.00 }
+    ]
+  },
+  {
+    key: 'execution',
+    label: 'Execution Speed',
+    options: [
+      { id: 'normal', label: 'Normal', description: 'Standard queue', multiplier: 1.0 },
+      { id: 'express', label: 'Express', description: '20% faster start', multiplier: 1.25 },
+      { id: 'super', label: 'Super Express', description: 'Immediate start, top 1% boosters', multiplier: 1.5 }
+    ]
+  },
+  {
+    key: 'completionMethod',
+    label: 'Method',
+    options: [
+      { id: 'piloted', label: 'Piloted (Account Recovery)', description: 'We play on your account', multiplier: 1.0 },
+      { id: 'selfplay', label: 'Self-play (Sherpa)', description: 'You play with our team', multiplier: 1.4 }
+    ]
+  }
+];
+
 export const serviceVariants = {
   // Rufus's Fury - EXACT SkyCoach match
   'raid-rufus-fury': [
@@ -624,6 +664,49 @@ export const serviceVariants = {
     }
   ],
 
+  // Vesper's Host Dungeon
+  'dungeon-vespers-host': [
+    {
+      key: 'difficulty',
+      label: 'Difficulty',
+      options: [
+        { id: 'normal', label: 'Normal Completion', multiplier: 1.0 },
+        { id: 'master', label: 'Master Difficulty', multiplier: 1.8 }
+      ]
+    },
+    {
+      key: 'runs',
+      label: 'Number of Runs',
+      options: [
+        { id: '1', label: '1 Run', multiplier: 1.0 },
+        { id: '3', label: '3 Runs', multiplier: 2.7 },
+        { id: 'all-chars', label: 'All 3 Characters', multiplier: 2.8 }
+      ]
+    },
+    {
+      key: 'secrets',
+      label: 'Secret Options',
+      options: [
+        { id: 'none', label: 'No Secrets', priceAdd: 0 },
+        { id: 'all-secrets', label: 'All Secrets & Collectibles', priceAdd: 14.99 },
+        { id: 'solo-flawless', label: 'Solo Flawless (Emblem)', priceAdd: 75.00 }
+      ]
+    }
+  ],
+
+  // Ice Breaker Exotic Farm
+  'dungeon-ice-breaker': [
+    {
+      key: 'guarantee',
+      label: 'Guarantee Type',
+      options: [
+        { id: 'until-drop', label: 'Farm Until Drop (Guaranteed)', multiplier: 1.0 },
+        { id: '3-runs', label: '3 Successful Runs (No Guarantee)', multiplier: 0.5 },
+        { id: '6-runs', label: '6 Successful Runs (No Guarantee)', multiplier: 0.8 }
+      ]
+    }
+  ],
+
   // Power leveling
   'power-campaign-legendary': [
     {
@@ -648,7 +731,9 @@ export const serviceVariants = {
 };
 
 export function getAvailableVariants(serviceId) {
-  return serviceVariants[serviceId] || [];
+  const specific = serviceVariants[serviceId] || [];
+  // Merge Global Variants at the beginning
+  return [...globalVariants, ...specific];
 }
 
 export function getDefaultVariants(serviceId) {
