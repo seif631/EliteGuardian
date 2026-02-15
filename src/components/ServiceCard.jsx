@@ -1,14 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+import { Star, Clock, ArrowRight, Zap, Shield, Flame } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Star, Zap, ArrowRight } from 'lucide-react';
+import { useCart } from '@/contexts/CartContext';
 
 const ServiceCard = ({ service }) => {
-    const navigate = useNavigate();
+    const { setIsCartOpen, setSelectedService } = useCart();
 
-    const handleViewDetails = () => {
-        navigate(`/service/${service.id}`);
+    const handleSelect = () => {
+        setSelectedService(service);
+        setIsCartOpen(true);
     };
 
     return (
@@ -17,69 +18,76 @@ const ServiceCard = ({ service }) => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
-            transition={{ duration: 0.2 }}
-            className="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden group hover:border-indigo-500/50 hover:shadow-xl hover:shadow-indigo-500/10 transition-all duration-300 flex flex-col h-full cursor-pointer"
-            onClick={handleViewDetails}
+            whileHover={{ y: -10 }}
+            className="group relative flex flex-col h-full rounded-[2.5rem] bg-white/5 border border-white/10 overflow-hidden backdrop-blur-md hover:bg-white/10 transition-all duration-500 shadow-3xl"
         >
-            <div className="relative h-48 overflow-hidden">
+            {/* Background Glow */}
+            <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-transparent to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+
+            {/* Image Section */}
+            <div className="relative h-56 overflow-hidden">
                 <img
-                    alt={service.imageDescription || service.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    src={service.image || "https://horizons-cdn.hostinger.com/8c4147fa-212b-4ef7-bb02-69f44b4a9de7/c1ebea8a4109a222fdbd806c591c2910.png"} />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent" />
+                    src={service.image}
+                    alt={service.name}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
 
-                {service.popular && (
-                    <div className="absolute top-3 left-3 bg-indigo-600 text-white text-[10px] uppercase font-bold px-2 py-1 rounded flex items-center gap-1 shadow-lg">
-                        <Zap className="w-3 h-3 fill-current" />
-                        Best Seller
-                    </div>
-                )}
-
-                <div className="absolute top-3 right-3 bg-slate-950/80 backdrop-blur-sm text-white text-xs font-bold px-2 py-1 rounded border border-slate-700">
-                    {service.category}
+                {/* Badges */}
+                <div className="absolute top-4 left-4 flex flex-col gap-2">
+                    {service.popular && (
+                        <div className="px-3 py-1 bg-white text-black text-[10px] font-black uppercase rounded-full tracking-widest flex items-center gap-1 shadow-lg">
+                            <Flame className="w-3 h-3 fill-black" />
+                            Popular
+                        </div>
+                    )}
+                    {(service.id && service.id.includes('raid')) && (
+                        <div className="px-3 py-1 bg-indigo-500 text-white text-[10px] font-black uppercase rounded-full tracking-widest flex items-center gap-1 shadow-lg">
+                            <Shield className="w-3 h-3 fill-white" />
+                            Elite Raid
+                        </div>
+                    )}
                 </div>
             </div>
 
-            <div className="p-5 flex flex-col flex-grow">
-                <div className="flex items-start justify-between mb-2">
-                    <h3 className="text-lg font-bold text-white leading-tight group-hover:text-indigo-400 transition-colors">{service.name}</h3>
+            {/* Content */}
+            <div className="p-8 flex flex-col flex-grow relative">
+                <div className="flex justify-between items-start mb-4">
+                    <h3 className="text-2xl font-black text-white leading-tight group-hover:text-indigo-300 transition-colors duration-300">
+                        {service.name}
+                    </h3>
                 </div>
 
-                <div className="flex items-center gap-2 mb-3">
-                    <div className="flex items-center text-yellow-400">
-                        <Star className="w-3.5 h-3.5 fill-current" />
-                        <span className="text-xs font-bold ml-1 text-slate-200">{service.rating}</span>
+                <div className="flex items-center gap-4 mb-6">
+                    <div className="flex items-center gap-1 bg-yellow-500/10 px-2 py-1 rounded-lg">
+                        <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                        <span className="text-yellow-400 text-xs font-black">{service.rating || '5.0'}</span>
                     </div>
-                    <span className="text-slate-600 text-xs">•</span>
-                    <span className="text-slate-500 text-xs">{service.reviews} reviews</span>
-                    <span className="text-slate-600 text-xs">•</span>
-                    <span className="text-slate-500 text-xs">{service.duration}</span>
+                    <div className="flex items-center gap-1 text-slate-500">
+                        <Clock className="w-4 h-4" />
+                        <span className="text-xs font-bold">{service.duration || '1-2 hours'}</span>
+                    </div>
                 </div>
 
-                <p className="text-slate-400 text-xs mb-4 line-clamp-2 leading-relaxed">{service.description}</p>
+                <p className="text-slate-400 text-sm mb-8 line-clamp-2 leading-relaxed font-medium">
+                    {service.description}
+                </p>
 
-                <div className="space-y-1.5 mb-5 flex-grow">
-                    {service.features.slice(0, 3).map((feature, idx) => (
-                        <div key={idx} className="flex items-center gap-2 text-xs text-slate-300">
-                            <div className="w-1 h-1 bg-indigo-500 rounded-full" />
-                            {feature}
-                        </div>
-                    ))}
-                </div>
-
-                <div className="mt-auto pt-4 border-t border-slate-800 flex items-center justify-between gap-3">
+                <div className="mt-auto flex items-center justify-between pt-6 border-t border-white/5">
                     <div className="flex flex-col">
-                        <span className="text-slate-400 text-xs">Starting at</span>
-                        <div className="text-xl font-bold text-white">${service.price}</div>
+                        <span className="text-white font-black text-3xl">
+                            ${service.price}
+                        </span>
+                        <span className="text-slate-600 text-[10px] font-bold uppercase tracking-widest">Base Payout</span>
                     </div>
-                    <Button
-                        size="sm"
-                        onClick={handleViewDetails}
-                        className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg shadow-lg shadow-indigo-500/20"
+
+                    <motion.button
+                        whileTap={{ scale: 0.9 }}
+                        onClick={handleSelect}
+                        className="w-14 h-14 bg-white hover:bg-indigo-50 text-black rounded-2xl flex items-center justify-center shadow-2xl transition-all duration-300 group-hover:rotate-12"
                     >
-                        View Details
-                        <ArrowRight className="w-4 h-4 ml-2" />
-                    </Button>
+                        <Zap className="w-6 h-6 fill-black" />
+                    </motion.button>
                 </div>
             </div>
         </motion.div>

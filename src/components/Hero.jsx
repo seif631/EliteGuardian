@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Shield, Star, Zap } from 'lucide-react';
+import { ArrowRight, Shield, Star, Zap, ChevronDown } from 'lucide-react';
 
 const Hero = () => {
     const scrollToServices = () => {
@@ -12,97 +12,108 @@ const Hero = () => {
     };
 
     return (
-        <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-            <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-950 to-black" />
-
-            <div className="absolute inset-0 opacity-20">
-                <img
-                    alt="Destiny 2 The Final Shape landscape"
-                    className="w-full h-full object-cover"
-                    src="https://images.unsplash.com/photo-1624729930209-d28351f1c0c8" />
+        <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-mesh">
+            {/* Animated background elements */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <motion.div
+                    animate={{
+                        scale: [1, 1.2, 1],
+                        opacity: [0.1, 0.2, 0.1],
+                        rotate: [0, 90, 0]
+                    }}
+                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                    className="absolute -top-[20%] -left-[10%] w-[60%] h-[60%] bg-indigo-500/20 rounded-full blur-[120px]"
+                />
+                <motion.div
+                    animate={{
+                        scale: [1, 1.3, 1],
+                        opacity: [0.1, 0.25, 0.1],
+                        rotate: [0, -90, 0]
+                    }}
+                    transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+                    className="absolute -bottom-[20%] -right-[10%] w-[60%] h-[60%] bg-purple-500/20 rounded-full blur-[120px]"
+                />
             </div>
 
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent" />
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-indigo-900/20 via-slate-950/0 to-slate-950/0" />
-
-            <div className="container mx-auto px-4 relative z-10">
-                <div className="max-w-5xl mx-auto text-center">
+            <div className="container mx-auto px-4 relative z-10 pt-20">
+                <div className="max-w-6xl mx-auto text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <div className="inline-flex items-center gap-2 bg-indigo-500/10 border border-indigo-500/30 rounded-full px-4 py-2 mb-6 backdrop-blur-sm">
-                            <Shield className="w-4 h-4 text-indigo-400" />
-                            <span className="text-indigo-200 text-sm font-medium tracking-wide">THE #1 BOOSTING PLATFORM</span>
-                        </div>
+                        <motion.div
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            transition={{ delay: 0.2, duration: 0.5 }}
+                            className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-5 py-2 mb-10 backdrop-blur-md shadow-2xl"
+                        >
+                            <span className="relative flex h-2 w-2">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+                            </span>
+                            <span className="text-indigo-200 text-xs font-bold tracking-[0.2em] uppercase">Authorized Elite Services</span>
+                        </motion.div>
 
-                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 leading-tight tracking-tight">
-                            BECOME AN
-                            <br />
-                            <span className="bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 bg-clip-text text-transparent filter drop-shadow-2xl">ELITE GUARDIAN</span>
+                        <h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-white mb-8 tracking-tighter leading-[0.9]">
+                            ELITE<br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/20 filter drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)]">GUARDIAN</span>
                         </h1>
 
-                        <p className="text-xl text-slate-300 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
-                            Unlock the full potential of your guardian. From <strong className="text-indigo-400">Salvation's Edge</strong> to <strong className="text-purple-400">Trials Flawless</strong>, we provide the safest and fastest boosting services in the galaxy.
+                        <p className="text-lg md:text-2xl text-slate-400 mb-12 max-w-3xl mx-auto font-light leading-relaxed tracking-wide">
+                            The galaxy's most prestigious boosting collective. Secure your legacy with <span className="text-white font-medium underline decoration-indigo-500 underline-offset-8">unmatched protection</span> and lightning-fast execution.
                         </p>
 
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+                        <div className="flex flex-col sm:flex-row gap-6 justify-center mb-24">
                             <Button
                                 size="lg"
                                 onClick={scrollToServices}
-                                className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-lg px-10 py-7 h-auto group rounded-xl shadow-lg shadow-indigo-500/25"
+                                className="bg-white text-black hover:bg-indigo-50 text-xl font-black px-12 py-8 h-auto group rounded-full shadow-[0_0_50px_rgba(255,255,255,0.1)] transition-all duration-500 hover:scale-105 active:scale-95"
                             >
-                                Browse Catalog
-                                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                Browse Services
+                                <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
                             </Button>
                             <Button
                                 size="lg"
                                 variant="outline"
-                                className="border-2 border-slate-700 bg-slate-900/50 backdrop-blur-sm text-white hover:bg-slate-800 hover:border-slate-600 font-bold text-lg px-10 py-7 h-auto rounded-xl"
+                                className="border border-white/20 bg-white/5 backdrop-blur-sm text-white hover:bg-white/10 text-xl font-bold px-12 py-8 h-auto rounded-full transition-all duration-300"
                                 onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}
                             >
-                                How It Works
+                                Learn More
                             </Button>
                         </div>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.2 }}
-                                className="bg-gradient-to-b from-slate-800/40 to-slate-900/40 backdrop-blur-md border border-slate-700/50 rounded-2xl p-6"
-                            >
-                                <Zap className="w-8 h-8 text-yellow-400 mb-3 mx-auto" />
-                                <h3 className="text-white font-bold mb-1">Lightning Fast</h3>
-                                <p className="text-slate-400 text-sm">Starts within 15 minutes</p>
-                            </motion.div>
-
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.3 }}
-                                className="bg-gradient-to-b from-slate-800/40 to-slate-900/40 backdrop-blur-md border border-slate-700/50 rounded-2xl p-6"
-                            >
-                                <Shield className="w-8 h-8 text-indigo-400 mb-3 mx-auto" />
-                                <h3 className="text-white font-bold mb-1">100% Secure</h3>
-                                <p className="text-slate-400 text-sm">VPN protected, no bots</p>
-                            </motion.div>
-
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.4 }}
-                                className="bg-gradient-to-b from-slate-800/40 to-slate-900/40 backdrop-blur-md border border-slate-700/50 rounded-2xl p-6"
-                            >
-                                <Star className="w-8 h-8 text-pink-400 mb-3 mx-auto" />
-                                <h3 className="text-white font-bold mb-1">Best Prices</h3>
-                                <p className="text-slate-400 text-sm">Price match guarantee</p>
-                            </motion.div>
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                            {[
+                                { icon: Zap, color: 'text-yellow-400', label: 'Priority Launch', desc: 'Starts in 15min' },
+                                { icon: Shield, color: 'text-indigo-400', label: 'Nexus Security', desc: 'VPN & Encrypted' },
+                                { icon: Star, color: 'text-pink-400', label: 'Ascendant Tier', desc: 'Top 0.1% Players' }
+                            ].map((item, idx) => (
+                                <motion.div
+                                    key={idx}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.4 + (idx * 0.1) }}
+                                    className="p-8 rounded-[2rem] bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors duration-500 group"
+                                >
+                                    <item.icon className={`w-10 h-10 ${item.color} mb-4 mx-auto group-hover:scale-110 transition-transform duration-500`} />
+                                    <h3 className="text-white font-black text-xl mb-2">{item.label}</h3>
+                                    <p className="text-slate-500 font-medium">{item.desc}</p>
+                                </motion.div>
+                            ))}
                         </div>
                     </motion.div>
                 </div>
             </div>
+
+            <motion.div
+                animate={{ y: [0, 10, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/30 cursor-pointer hover:text-white/60 transition-colors"
+                onClick={scrollToServices}
+            >
+                <ChevronDown className="w-10 h-10" />
+            </motion.div>
         </section>
     );
 };
