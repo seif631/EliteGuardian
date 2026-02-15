@@ -1,0 +1,3 @@
+Building in D:\repo\EliteGuardian\repo 
+Node Modules Path: node_modules\.bin\vite.cmd 
+vite.cmd found 
