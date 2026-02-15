@@ -1,15 +1,35 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Star, Clock, ArrowRight, Zap, Shield, Flame } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Star, Clock, Zap, Shield, Flame } from 'lucide-react';
 import { useCart } from '@/contexts/CartContext';
+import { useNavigate } from 'react-router-dom';
 
 const ServiceCard = ({ service }) => {
     const { setIsCartOpen, setSelectedService } = useCart();
+    const navigate = useNavigate();
 
-    const handleSelect = () => {
+    const categoryImages = {
+        'Raids': '/images/raid_hero.png',
+        'Trials': '/images/pvp_hero.png',
+        'Dungeons': '/images/dungeon_hero.png',
+        'PvP': '/images/pvp_hero.png',
+        'PvE': '/images/dungeon_hero.png',
+        'Exotics': '/images/exotics_hero.png',
+        'Crucible': '/images/pvp_hero.png',
+        'Titles': '/images/exotics_hero.png',
+        'default': '/images/raid_hero.png'
+    };
+
+    const displayImage = service.image || categoryImages[service.category] || categoryImages['default'];
+
+    const handleSelect = (e) => {
+        e.stopPropagation(); // Prevent card navigation when clicking the Zap button
         setSelectedService(service);
         setIsCartOpen(true);
+    };
+
+    const handleCardClick = () => {
+        navigate(`/service/${service.id}`);
     };
 
     return (
@@ -19,7 +39,8 @@ const ServiceCard = ({ service }) => {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
             whileHover={{ y: -10 }}
-            className="group relative flex flex-col h-full rounded-[2.5rem] bg-white/5 border border-white/10 overflow-hidden backdrop-blur-md hover:bg-white/10 transition-all duration-500 shadow-3xl"
+            onClick={handleCardClick}
+            className="group relative flex flex-col h-full rounded-[2.5rem] bg-white/5 border border-white/10 overflow-hidden backdrop-blur-md hover:bg-white/10 transition-all duration-500 shadow-3xl cursor-pointer"
         >
             {/* Background Glow */}
             <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-transparent to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
@@ -27,8 +48,11 @@ const ServiceCard = ({ service }) => {
             {/* Image Section */}
             <div className="relative h-56 overflow-hidden">
                 <img
-                    src={service.image}
+                    src={displayImage}
                     alt={service.name}
+                    onError={(e) => {
+                        e.target.src = categoryImages[service.category] || categoryImages['default'];
+                    }}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />

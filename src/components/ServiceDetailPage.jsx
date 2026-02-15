@@ -86,116 +86,133 @@ const ServiceDetailPage = () => {
     };
 
     return (
-        <div className="min-h-screen bg-slate-950">
+        <div className="min-h-screen bg-slate-950 font-sans">
+            {/* Background elements */}
+            <div className="fixed inset-0 overflow-hidden pointer-events-none">
+                <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-indigo-500/10 blur-[120px] rounded-full" />
+                <div className="absolute bottom-0 left-0 w-[50%] h-[50%] bg-purple-500/10 blur-[120px] rounded-full" />
+            </div>
+
             {/* Sticky Header */}
-            <div className="sticky top-0 z-50 bg-slate-950/80 backdrop-blur-lg border-b border-slate-800">
-                <div className="container mx-auto px-4 py-4">
+            <div className="sticky top-0 z-50 bg-black/60 backdrop-blur-2xl border-b border-white/5">
+                <div className="container mx-auto px-6 py-4 flex items-center justify-between">
                     <Button
                         variant="ghost"
                         onClick={() => navigate('/')}
-                        className="text-slate-400 hover:text-white"
+                        className="text-slate-400 hover:text-white hover:bg-white/5 rounded-full"
                     >
                         <ArrowLeft className="w-4 h-4 mr-2" />
-                        Back to Services
+                        Back to Vault
                     </Button>
+                    <div className="text-white font-black tracking-widest uppercase text-xs">Elite Configuration</div>
                 </div>
             </div>
 
-            <div className="container mx-auto px-4 py-12">
-                <div className="grid lg:grid-cols-2 gap-8">
+            <div className="container mx-auto px-6 py-12 relative z-10">
+                <div className="grid lg:grid-cols-2 gap-12 items-start">
                     {/* Left Column - Image & Info */}
                     <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        className="space-y-6"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        className="space-y-8"
                     >
-                        <div className="relative rounded-2xl overflow-hidden">
+                        <div className="relative rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl group">
                             <img
-                                src={service.image || "https://horizons-cdn.hostinger.com/8c4147fa-212b-4ef7-bb02-69f44b4a9de7/c1ebea8a4109a222fdbd806c591c2910.png"}
+                                src={service.image || '/images/raid_hero.png'}
                                 alt={service.imageDescription || service.name}
-                                className="w-full h-[400px] object-cover"
+                                onError={(e) => {
+                                    const categoryImages = {
+                                        'Raids': '/images/raid_hero.png',
+                                        'Trials': '/images/pvp_hero.png',
+                                        'Dungeons': '/images/dungeon_hero.png',
+                                        'PvP': '/images/pvp_hero.png',
+                                        'PvE': '/images/dungeon_hero.png',
+                                        'Exotics': '/images/exotics_hero.png',
+                                        'Crucible': '/images/pvp_hero.png',
+                                        'Titles': '/images/exotics_hero.png',
+                                        'default': '/images/raid_hero.png'
+                                    };
+                                    e.target.src = categoryImages[service.category] || categoryImages['default'];
+                                }}
+                                className="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent" />
-                        </div>
+                            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
 
-                        <div className="bg-slate-900 border border-slate-800 rounded-xl p-6">
-                            <div className="flex items-center justify-between mb-4">
-                                <h1 className="text-3xl font-black text-white">{service.name}</h1>
-                                <span className="bg-indigo-600 text-white text-sm px-3 py-1 rounded-lg font-bold">
+                            <div className="absolute bottom-10 left-10">
+                                <span className="bg-indigo-600 text-white text-[10px] px-3 py-1 rounded-full font-black uppercase tracking-widest mb-4 inline-block">
                                     {service.category}
                                 </span>
+                                <h1 className="text-4xl md:text-5xl font-black text-white tracking-tighter leading-none">
+                                    {service.name}
+                                </h1>
                             </div>
+                        </div>
 
-                            <div className="flex items-center gap-4 mb-4">
-                                <div className="flex items-center text-yellow-400">
-                                    <Star className="w-4 h-4 fill-current" />
-                                    <span className="text-sm font-bold ml-1 text-slate-200">{service.rating}</span>
+                        <div className="glass rounded-[2.5rem] p-10 space-y-8 border-white/10">
+                            <div className="flex flex-wrap items-center gap-6">
+                                <div className="flex items-center gap-2">
+                                    <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                                    <span className="text-white font-black text-xl">{service.rating}</span>
+                                    <span className="text-slate-500 text-sm font-bold">({service.reviews} verified)</span>
                                 </div>
-                                <span className="text-slate-600">•</span>
-                                <span className="text-slate-400 text-sm">{service.reviews} reviews</span>
-                                <span className="text-slate-600">•</span>
-                                <span className="text-slate-400 text-sm">{service.duration}</span>
+                                <div className="h-4 w-px bg-white/10 hidden md:block" />
+                                <div className="flex items-center gap-2 text-slate-300">
+                                    <Check className="w-5 h-5 text-green-500" />
+                                    <span className="text-sm font-bold uppercase tracking-widest">{service.duration} Delivery</span>
+                                </div>
                             </div>
 
-                            <p className="text-slate-400 mb-6">
+                            <p className="text-lg text-slate-400 font-medium leading-relaxed">
                                 {service.description}
                             </p>
 
-                            <div className="space-y-2">
-                                <h3 className="text-white font-bold mb-3">What's Included:</h3>
-                                {service.features.map((feature, idx) => (
-                                    <div key={idx} className="flex items-start gap-2 text-slate-300">
-                                        <Check className="w-5 h-5 text-indigo-500 flex-shrink-0 mt-0.5" />
-                                        <span className="text-sm">{feature}</span>
-                                    </div>
-                                ))}
+                            <div className="pt-8 border-t border-white/5">
+                                <h3 className="text-white font-black text-xs uppercase tracking-[0.2em] mb-6">Service Protocol:</h3>
+                                <div className="grid sm:grid-cols-2 gap-4">
+                                    {service.features.map((feature, idx) => (
+                                        <div key={idx} className="flex items-start gap-3 text-slate-400 group">
+                                            <div className="w-5 h-5 rounded-full bg-indigo-500/10 flex items-center justify-center mt-0.5 group-hover:bg-indigo-500/20 transition-colors">
+                                                <Check className="w-3 h-3 text-indigo-400" />
+                                            </div>
+                                            <span className="text-sm font-medium">{feature}</span>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </motion.div>
 
                     {/* Right Column - Variants & Cart */}
                     <motion.div
-                        initial={{ opacity: 0, x: 20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        className="space-y-6"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.1 }}
+                        className="lg:sticky lg:top-32"
                     >
-                        <div className="bg-slate-900 border border-slate-800 rounded-xl p-6 sticky top-24">
-                            <h2 className="text-2xl font-bold text-white mb-6">Customize Your Service</h2>
+                        <div className="glass-dark rounded-[3rem] p-10 border-white/10 shadow-[0_40px_100px_rgba(0,0,0,0.5)]">
+                            <h2 className="text-2xl font-black text-white mb-8 tracking-tight uppercase border-b border-white/5 pb-6">Personalize</h2>
 
-                            {availableVariants.length === 0 ? (
-                                <div className="text-center py-8">
-                                    <p className="text-slate-400">No customization options available for this service.</p>
-                                    <p className="text-slate-500 text-sm mt-2">This is a fixed-price service.</p>
-                                </div>
-                            ) : (
-                                <>
-                                    {availableVariants.map((variant) => {
+                            <div className="space-y-8 mb-10 max-h-[500px] overflow-y-auto pr-2 scrollbar-hide">
+                                {availableVariants.length === 0 ? (
+                                    <div className="text-center py-12 glass rounded-3xl">
+                                        <p className="text-slate-400 font-bold uppercase text-xs tracking-widest">Fixed Protocol Service</p>
+                                        <p className="text-slate-500 text-sm mt-2">No additional variants required.</p>
+                                    </div>
+                                ) : (
+                                    availableVariants.map((variant) => {
                                         let shouldShow = true;
-
-                                        // --- SKYCOACH STYLE PERK SELECTION LOGIC ---
                                         const rollType = selectedVariants['rollType'] || selectedVariants['difficulty'];
 
-                                        // Logic 1: 'guaranteedPerk' dropdown only shows if 'guaranteed-perk' is selected (by ID)
-                                        if (variant.key === 'guaranteedPerk') {
-                                            shouldShow = rollType === 'guaranteed-perk';
-                                        }
-
-                                        // Logic 2: 'godRollChoice' radio/dropdown only shows if 'god-roll' is selected (by ID)
-                                        if (variant.key === 'godRollChoice') {
-                                            shouldShow = rollType === 'god-roll';
-                                        }
-
-                                        // Logic 3: 'deepsightRolls' only shows if 'pattern' is selected (for Nullify/Imminence)
-                                        if (variant.key === 'deepsightRolls') {
-                                            shouldShow = rollType === 'pattern';
-                                        }
+                                        if (variant.key === 'guaranteedPerk') shouldShow = rollType === 'guaranteed-perk';
+                                        if (variant.key === 'godRollChoice') shouldShow = rollType === 'god-roll';
+                                        if (variant.key === 'deepsightRolls') shouldShow = rollType === 'pattern';
 
                                         if (!shouldShow) return null;
 
                                         return (
-                                            <div key={variant.key} className="mb-6">
-                                                <h3 className="text-white font-semibold mb-3">{variant.label}</h3>
-                                                <div className="grid grid-cols-1 gap-2">
+                                            <div key={variant.key} className="space-y-4">
+                                                <h3 className="text-slate-500 font-black text-[10px] tracking-[0.3em] uppercase">{variant.label}</h3>
+                                                <div className="grid gap-3">
                                                     {variant.options.map((option) => {
                                                         const isSelected = selectedVariants[variant.key] === option.id;
                                                         return (
@@ -203,60 +220,66 @@ const ServiceDetailPage = () => {
                                                                 key={option.id}
                                                                 onClick={() => handleVariantChange(variant.key, option.id)}
                                                                 className={`
-                                  p-4 rounded-lg border-2 transition-all duration-200 text-left
-                                  ${isSelected
-                                                                        ? 'border-indigo-500 bg-indigo-500/10'
-                                                                        : 'border-slate-700 bg-slate-800/50 hover:border-slate-600'}
-                                `}
+                                                                    p-5 rounded-2xl border transition-all duration-300 text-left relative group
+                                                                    ${isSelected
+                                                                        ? 'bg-white border-white shadow-[0_0_30px_rgba(255,255,255,0.1)]'
+                                                                        : 'bg-white/5 border-white/10 hover:border-white/20'}
+                                                                `}
                                                             >
                                                                 <div className="flex items-center justify-between">
-                                                                    <div className="flex-1">
-                                                                        <div className="text-white font-medium">{option.label}</div>
+                                                                    <div>
+                                                                        <div className={`font-black uppercase tracking-tight ${isSelected ? 'text-black' : 'text-white'}`}>
+                                                                            {option.label}
+                                                                        </div>
                                                                         {option.description && (
-                                                                            <div className="text-slate-400 text-sm mt-1">{option.description}</div>
+                                                                            <div className={`text-xs mt-1 font-medium ${isSelected ? 'text-slate-600' : 'text-slate-500'}`}>
+                                                                                {option.description}
+                                                                            </div>
                                                                         )}
                                                                     </div>
-                                                                    <div className="text-slate-300 font-bold ml-4">
+                                                                    <div className={`font-black text-sm ${isSelected ? 'text-black' : 'text-indigo-400'}`}>
                                                                         {option.priceAdd ? `+$${option.priceAdd.toFixed(2)}` :
                                                                             option.multiplier && option.multiplier !== 1 ? `x${option.multiplier}` : ''}
                                                                     </div>
                                                                 </div>
+                                                                {isSelected && (
+                                                                    <motion.div layoutId="active" className="absolute inset-0 bg-white rounded-2xl -z-10" />
+                                                                )}
                                                             </button>
                                                         );
                                                     })}
                                                 </div>
                                             </div>
                                         );
-                                    })}
-                                </>
-                            )}
-
-                            {/* Price Calculation */}
-                            <div className="mt-8 pt-6 border-t border-slate-800">
-                                <div className="flex items-center justify-between mb-6">
-                                    <span className="text-slate-400">Total Price</span>
-                                    <span className="text-3xl font-black text-white">
-                                        ${finalPrice.toFixed(2)}
-                                    </span>
-                                </div>
-
-                                <div className="flex gap-4">
-                                    <Button
-                                        className="flex-1 bg-indigo-600 hover:bg-indigo-700 h-14 text-lg font-bold"
-                                        onClick={handleAddToCart}
-                                    >
-                                        <ShoppingCart className="w-5 h-5 mr-2" />
-                                        Add to Cart
-                                    </Button>
-                                </div>
-
-                                <div className="mt-4 text-center">
-                                    <p className="text-xs text-slate-500">
-                                        *Guaranteed safe and secure service
-                                    </p>
-                                </div>
+                                    })
+                                )}
                             </div>
 
+                            <div className="pt-8 border-t border-white/10">
+                                <div className="flex items-center justify-between mb-8">
+                                    <div className="flex flex-col">
+                                        <span className="text-slate-500 text-[10px] font-black uppercase tracking-widest">Authorized Quote</span>
+                                        <span className="text-4xl font-black text-white tracking-tighter">
+                                            ${finalPrice.toFixed(2)}
+                                        </span>
+                                    </div>
+                                    <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center">
+                                        <Zap className="w-6 h-6 text-indigo-400 fill-indigo-400" />
+                                    </div>
+                                </div>
+
+                                <Button
+                                    onClick={handleAddToCart}
+                                    className="w-full bg-white text-black hover:bg-slate-100 h-16 text-xl font-black tracking-tight rounded-2xl transition-transform active:scale-95 shadow-[0_20px_40px_rgba(255,255,255,0.1)]"
+                                >
+                                    <ShoppingCart className="w-6 h-6 mr-3 border-none" />
+                                    Confirm Configuration
+                                </Button>
+
+                                <p className="mt-6 text-center text-[10px] text-slate-600 font-bold uppercase tracking-widest">
+                                    Encrypted Checkout • 100% Satisfaction Guarantee
+                                </p>
+                            </div>
                         </div>
                     </motion.div>
                 </div>
