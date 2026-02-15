@@ -9,7 +9,7 @@ import HowItWorks from './components/HowItWorks';
 import Testimonials from './components/Testimonials';
 import CallToAction from './components/CallToAction';
 import Footer from './components/Footer';
-import WelcomeMessage from './components/WelcomeMessage';
+
 import Cart from './components/Cart';
 import LiveChat from './components/LiveChat';
 import ServiceDetailPage from './components/ServiceDetailPage';
@@ -18,8 +18,8 @@ import './App.css';
 function HomePage() {
   return (
     <>
-      <WelcomeMessage />
       <Header />
+
       <Hero />
       <Features />
       <Services />
