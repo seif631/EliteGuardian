@@ -1,49 +1,52 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ShoppingCart, MessageSquare, Rocket, Trophy } from 'lucide-react';
+import { ShoppingCart, MessageSquare, Rocket, Trophy, ShieldCheck, Cpu, Target, Headphones } from 'lucide-react';
 
 const HowItWorks = () => {
     const steps = [
         {
-            icon: ShoppingCart,
-            title: 'Choose Service',
-            description: 'Browse our catalog and select the boosting service you need'
+            icon: Target,
+            title: 'Designation',
+            subtitle: 'Select your target from the vault. Customize every detail of your ascent.'
         },
         {
-            icon: MessageSquare,
-            title: 'Place Order',
-            description: 'Complete checkout and we\'ll contact you via Discord'
+            icon: Cpu,
+            title: 'Encryption',
+            subtitle: 'Secure your order through our military-grade checkout system.'
         },
         {
-            icon: Rocket,
-            title: 'We Boost',
-            description: 'Our expert players complete your order safely and efficiently'
+            icon: ShieldCheck,
+            title: 'Protection',
+            subtitle: 'Our top-0.1% operatives begin execution with VPN protocols active.'
         },
         {
             icon: Trophy,
-            title: 'Enjoy Rewards',
-            description: 'Receive your completed service and enjoy your new gear!'
+            title: 'Dominance',
+            subtitle: 'Retrieve your rewards and dominate the battlefield with your new gear.'
         }
     ];
 
     return (
-        <section id="how-it-works" className="py-20 bg-slate-950">
-            <div className="container mx-auto px-4">
+        <section id="how-it-works" className="py-32 bg-slate-950 relative overflow-hidden">
+            <div className="container mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-center mb-12"
+                    className="text-center mb-24"
                 >
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                        How It <span className="bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">Works</span>
+                    <div className="inline-block px-4 py-1 bg-white/5 border border-white/10 rounded-full mb-6">
+                        <span className="text-indigo-400 font-bold text-xs tracking-widest uppercase">The Protocol</span>
+                    </div>
+                    <h2 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tighter">
+                        THE PROCESS
                     </h2>
-                    <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-                        Getting started is quick and easy - follow these simple steps
+                    <p className="text-slate-500 text-lg max-w-2xl mx-auto font-medium">
+                        A seamless, secure, and professional journey from selection to conquest.
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 max-w-7xl mx-auto">
                     {steps.map((step, index) => {
                         const Icon = step.icon;
                         return (
@@ -52,22 +55,19 @@ const HowItWorks = () => {
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: index * 0.15 }}
-                                className="relative text-center"
+                                transition={{ delay: index * 0.1 }}
+                                className="relative group"
                             >
-                                <div className="relative inline-block mb-6">
-                                    <div className="w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-600 rounded-full flex items-center justify-center">
-                                        <Icon className="w-10 h-10 text-white" />
+                                <div className="mb-8 relative">
+                                    <div className="w-24 h-24 bg-white/5 border border-white/10 rounded-[2rem] flex items-center justify-center group-hover:bg-white group-hover:scale-110 transition-all duration-500 shadow-2xl">
+                                        <Icon className="w-10 h-10 text-white group-hover:text-black transition-colors duration-500" />
                                     </div>
-                                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-slate-800 border-2 border-amber-500 rounded-full flex items-center justify-center text-white font-bold">
-                                        {index + 1}
+                                    <div className="absolute -top-4 -right-4 w-10 h-10 glass rounded-full flex items-center justify-center text-white font-black text-xs">
+                                        0{index + 1}
                                     </div>
                                 </div>
-                                <h3 className="text-xl font-bold text-white mb-2">{step.title}</h3>
-                                <p className="text-slate-400">{step.description}</p>
-                                {index < steps.length - 1 && (
-                                    <div className="hidden lg:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-amber-500/50 to-transparent -z-10" />
-                                )}
+                                <h3 className="text-2xl font-black text-white mb-4 group-hover:text-indigo-300 transition-colors uppercase tracking-tight">{step.title}</h3>
+                                <p className="text-slate-500 font-medium leading-relaxed">{step.subtitle}</p>
                             </motion.div>
                         );
                     })}

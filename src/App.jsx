@@ -11,6 +11,7 @@ import CallToAction from './components/CallToAction';
 import Footer from './components/Footer';
 import WelcomeMessage from './components/WelcomeMessage';
 import Cart from './components/Cart';
+import LiveChat from './components/LiveChat';
 import ServiceDetailPage from './components/ServiceDetailPage';
 import './App.css';
 
@@ -40,6 +41,7 @@ function App() {
             <Route path="/service/:serviceId" element={<ServiceDetailPage />} />
           </Routes>
           <Cart />
+          <LiveChat />
         </div>
       </Router>
     </CartProvider>
