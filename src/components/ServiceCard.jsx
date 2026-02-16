@@ -5,7 +5,7 @@ import { useCart } from '@/contexts/CartContext';
 import { useNavigate } from 'react-router-dom';
 
 const ServiceCard = ({ service }) => {
-    const { setIsCartOpen, setSelectedService } = useCart();
+    const { setIsCartOpen, addToCart } = useCart();
     const navigate = useNavigate();
 
     const categoryImages = {
@@ -23,9 +23,8 @@ const ServiceCard = ({ service }) => {
     const displayImage = service.image || categoryImages[service.category] || categoryImages['default'];
 
     const handleSelect = (e) => {
-        e.stopPropagation(); // Prevent card navigation when clicking the Zap button
-        setSelectedService(service);
-        setIsCartOpen(true);
+        e.stopPropagation();
+        addToCart(service);
     };
 
     const handleCardClick = () => {

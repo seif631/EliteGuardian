@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ShoppingCart, Star, Check } from 'lucide-react';
+import { ArrowLeft, ShoppingCart, Star, Check, Zap } from 'lucide-react';
 import { Button } from './ui/button';
 import { useCart } from '../contexts/CartContext';
 import { useToast } from './ui/use-toast';
