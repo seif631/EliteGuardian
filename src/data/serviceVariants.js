@@ -515,6 +515,118 @@ export const serviceVariants = {
     }
   ],
 
+  // Indebted Kindness - EXACT SkyCoach match
+  'dungeon-indebted-kindness': [
+    {
+      key: 'rollType',
+      label: 'Roll Type',
+      options: [
+        { id: 'random', label: 'Roll with Random Perks', priceAdd: 0 },
+        { id: 'guaranteed-perk', label: 'Roll with Guaranteed Perk List', priceAdd: 34.75 },
+        { id: 'god-roll', label: 'God Rolls List', priceAdd: 69.50 }
+      ]
+    },
+    {
+      key: 'godRollChoice',
+      label: 'Select God Roll',
+      options: [
+        { id: 'beacon-volt', label: 'Beacon Rounds + Voltshot', priceAdd: 0 },
+        { id: 'impulse-volt', label: 'Impulse Amplifier + Voltshot', priceAdd: 0 },
+        { id: 'lead-volt', label: 'Lead from Gold + Voltshot', priceAdd: 0 }
+      ]
+    },
+    {
+      key: 'guaranteedPerk',
+      label: 'Guaranteed Perk',
+      options: [
+        { id: 'none', label: 'Select a perk', priceAdd: 0 },
+        { id: 'voltshot', label: 'Voltshot', priceAdd: 0 },
+        { id: 'beacon-rounds', label: 'Beacon Rounds', priceAdd: 0 },
+        { id: 'impulse-amplifier', label: 'Impulse Amplifier', priceAdd: 0 },
+        { id: 'lead-from-gold', label: 'Lead from Gold', priceAdd: 0 },
+        { id: 'loose-change', label: 'Loose Change', priceAdd: 0 },
+        { id: 'adagio', label: 'Adagio', priceAdd: 0 }
+      ]
+    },
+    {
+      key: 'collection',
+      label: 'Collection Status',
+      options: [
+        { id: 'unlocked', label: "I've unlocked this weapon in Collection", priceAdd: 0 },
+        { id: 'need-unlock', label: 'I need to unlock this weapon in Collection', priceAdd: 2.67 }
+      ]
+    },
+    {
+      key: 'extras',
+      label: 'Choose Extras',
+      options: [
+        { id: 'none', label: 'No Extras', priceAdd: 0 },
+        { id: 'sherpa', label: 'Self-play (Sherpa)', priceAdd: 4.00 }
+      ]
+    },
+    {
+      key: 'speed',
+      label: 'Completion Speed',
+      options: [
+        { id: 'normal', label: 'Normal', priceAdd: 0 },
+        { id: 'express', label: 'Express', priceAdd: 2.40 }
+      ]
+    }
+  ],
+
+  // The Summoner (Adept) - EXACT SkyCoach match
+  'trials-summoner-adept': [
+    {
+      key: 'rollType',
+      label: 'Roll Type',
+      options: [
+        { id: 'random', label: 'Roll with Random Perks', priceAdd: 0 },
+        { id: 'guaranteed-perk', label: 'Roll with Guaranteed Perk List', priceAdd: 32.40 },
+        { id: 'god-roll', label: 'God Rolls List', priceAdd: 72.00 }
+      ]
+    },
+    {
+      key: 'godRollChoice',
+      label: 'Select God Roll',
+      options: [
+        { id: 'heal-incand', label: 'Heal Clip + Incandescent', priceAdd: 0 },
+        { id: 'zen-kill', label: 'Zen Moment + Kill Clip', priceAdd: 0 },
+        { id: 'overflow-rampage', label: 'Overflow + Rampage', priceAdd: 0 }
+      ]
+    },
+    {
+      key: 'guaranteedPerk',
+      label: 'Guaranteed Perk',
+      options: [
+        { id: 'none', label: 'Select a perk', priceAdd: 0 },
+        { id: 'incandescent', label: 'Incandescent', priceAdd: 0 },
+        { id: 'heal-clip', label: 'Heal Clip', priceAdd: 0 },
+        { id: 'zen-moment', label: 'Zen Moment', priceAdd: 0 },
+        { id: 'kill-clip', label: 'Kill Clip', priceAdd: 0 },
+        { id: 'onslaught', label: 'Onslaught', priceAdd: 0 },
+        { id: 'dynamic-sway', label: 'Dynamic Sway Reduction', priceAdd: 0 }
+      ]
+    },
+    {
+      key: 'extras',
+      label: 'Choose Extras',
+      options: [
+        { id: 'none', label: 'No Extras', priceAdd: 0 },
+        { id: 'sherpa', label: 'Self-play (Sherpa)', priceAdd: 5.00 },
+        { id: 'trials-access', label: 'Trials Access (Saint-14 Quest)', priceAdd: 15.00 }
+      ]
+    },
+    {
+      key: 'speed',
+      label: 'Completion Speed',
+      options: [
+        { id: 'normal', label: 'Normal', priceAdd: 0 },
+        { id: 'express', label: 'Express', priceAdd: 2.00 },
+        { id: 'super', label: 'Super Express', priceAdd: 4.00 }
+      ]
+    }
+  ],
+
   // Salvation's Edge Raid - Raid completion options
   'raid-salvations-edge': [
     {
