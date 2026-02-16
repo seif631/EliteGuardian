@@ -1191,7 +1191,7 @@ export const servicesData = [
         popular: false,
         description: "Complete all weekly Gambit bounties and matches for guaranteed pinnacle rewards and bonus Infamy.",
         imageDescription: 'Destiny 2 Gambit Weekly Boost',
-        image: 'https://skycoach.gg/storage/uploads/products/gambit-weekly-challenges-boost1652314567_picture_item.png',
+        image: 'https://skycoach.gg/storage/uploads/products/touch-of-malice1661529282_picture_item_small.png',
         features: ['Pinnacle Gear', 'Bright Dust', 'Weekly Challenges', 'Seasonal Progress']
     },
     {
@@ -1307,7 +1307,7 @@ export const servicesData = [
         popular: true,
         description: "Farm the complete Brave Arsenal collection from Into the Light. Includes Luna's Howl and Recluse. Guaranteed god rolls available.",
         imageDescription: 'Destiny 2 Brave Arsenal Farming',
-        image: 'https://skycoach.gg/storage/uploads/products/brave-weapons-arsenal-farm1713312567_picture_item.png',
+        image: 'https://skycoach.gg/storage/uploads/products/salvations-edge-raid1718616296_picture_item_small.png',
         features: ['All Brave Weapons', 'God Rolls', 'Fast Farming', 'Seasonal Content']
     },
     {
@@ -1671,7 +1671,7 @@ export const servicesData = [
         popular: false,
         description: "Complete all weekly Vanguard Ops strike challenges for pinnacle drops and reputation gains.",
         imageDescription: 'Destiny 2 Vanguard Ops Boost',
-        image: 'https://skycoach.gg/storage/uploads/products/vanguard-strikes-weekly-boost1652315901_picture_item.png',
+        image: 'https://skycoach.gg/storage/uploads/products/vex-mythoclast1644240176_picture_item_small.png',
         features: ['Pinnacle Gear', 'Strike Loot', 'Vanguard Tokens', 'Weekly Completion']
     },
     {
