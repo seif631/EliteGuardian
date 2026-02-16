@@ -10,13 +10,24 @@ const ServiceCard = ({ service }) => {
 
     const categoryImages = {
         'Raids': 'https://skycoach.gg/storage/uploads/products/salvations-edge-raid1718616296_picture_item_small.png',
-        'Trials': 'https://skycoach.gg/storage/uploads/products/trials-of-osiris-flawless-boost1615822348_picture_item_small.png',
-        'Dungeons': 'https://skycoach.gg/storage/uploads/products/vesper-s-host-dungeon1728394467_picture_item_small.png',
-        'PvP': 'https://skycoach.gg/storage/uploads/products/trials-of-osiris-flawless-boost1615822348_picture_item_small.png',
-        'PvE': 'https://skycoach.gg/storage/uploads/products/vesper-s-host-dungeon1728394467_picture_item_small.png',
-        'Exotics': 'https://skycoach.gg/storage/uploads/products/ice-breaker1728395350_picture_item_small.png',
-        'Crucible': 'https://skycoach.gg/storage/uploads/products/trials-of-osiris-flawless-boost1615822348_picture_item_small.png',
-        'Titles': 'https://skycoach.gg/storage/uploads/products/ice-breaker1728395350_picture_item_small.png',
+        'Trials': 'https://skycoach.gg/storage/uploads/products/rufus-fury1678547593_picture_item_small.png',
+        'Dungeons': 'https://skycoach.gg/storage/uploads/products/ice-breaker1728980735_picture_item_small.png',
+        'PvP': 'https://skycoach.gg/storage/uploads/products/rufus-fury1678547593_picture_item_small.png',
+        'PvE': 'https://skycoach.gg/storage/uploads/products/ice-breaker1728980735_picture_item_small.png',
+        'Exotics': 'https://skycoach.gg/storage/uploads/products/ice-breaker1728980735_picture_item_small.png',
+        'Crucible': 'https://skycoach.gg/storage/uploads/products/rufus-fury1678547593_picture_item_small.png',
+        'Titles': 'https://skycoach.gg/storage/uploads/products/ice-breaker1728980735_picture_item_small.png',
+        'Bundles': 'https://skycoach.gg/storage/uploads/products/salvations-edge-raid1718616296_picture_item_small.png',
+        'Power': 'https://skycoach.gg/storage/uploads/products/salvations-edge-raid1718616296_picture_item_small.png',
+        'Vanguard': 'https://skycoach.gg/storage/uploads/products/ice-breaker1728980735_picture_item_small.png',
+        'Gambit': 'https://skycoach.gg/storage/uploads/products/rufus-fury1678547593_picture_item_small.png',
+        'Seasonal': 'https://skycoach.gg/storage/uploads/products/ice-breaker1728980735_picture_item_small.png',
+        'Coaching': 'https://skycoach.gg/storage/uploads/products/rufus-fury1678547593_picture_item_small.png',
+        'Account': 'https://skycoach.gg/storage/uploads/products/salvations-edge-raid1718616296_picture_item_small.png',
+        'Collections': 'https://skycoach.gg/storage/uploads/products/ice-breaker1728980735_picture_item_small.png',
+        'Quests': 'https://skycoach.gg/storage/uploads/products/ice-breaker1728980735_picture_item_small.png',
+        'Catalysts': 'https://skycoach.gg/storage/uploads/products/ice-breaker1728980735_picture_item_small.png',
+        'Triumphs': 'https://skycoach.gg/storage/uploads/products/ice-breaker1728980735_picture_item_small.png',
         'default': 'https://skycoach.gg/storage/uploads/products/salvations-edge-raid1718616296_picture_item_small.png'
     };
 

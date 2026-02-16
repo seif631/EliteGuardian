@@ -11,7 +11,7 @@ export const servicesData = [
         popular: true,
         description: "Complete all current major raids in one go: Salvation's Edge, Crota's End, and Root of Nightmares. Massive savings!",
         imageDescription: 'Destiny 2 Raid Bundle',
-        image: 'https://skycoach.gg/storage/uploads/products/raid-marathon-bundle1718013550_picture_item_small.png',
+        image: 'https://skycoach.gg/storage/uploads/products/salvations-edge-raid1718616296_picture_item_small.png',
         features: ['3 Major Raids', 'Multiple Exotics Chance', 'Full Armor Sets', '20% Bundle Discount']
     },
     {
@@ -25,7 +25,7 @@ export const servicesData = [
         popular: true,
         description: "Complete 1 month's worth of Pinnacle activities in a single week. Instant power cap reached.",
         imageDescription: 'Destiny 2 Power Bundle',
-        image: 'https://skycoach.gg/storage/uploads/products/pinnacle-power-jump1621345980_picture_item_small.png',
+        image: 'https://skycoach.gg/storage/uploads/products/salvations-edge-raid1718616296_picture_item_small.png',
         features: ['All Weekly Pinnacles', 'Artifact Leveling', 'Raid & Dungeon Runs', 'Extreme Fast Tracking']
     },
     {
@@ -39,7 +39,7 @@ export const servicesData = [
         popular: false,
         description: "Get everything you need for the new episode: Alethonym Exotic, full campaign clear, and first Title triumphs.",
         imageDescription: 'Destiny 2 Revenant Bundle',
-        image: 'https://skycoach.gg/storage/uploads/products/revenant-episode-bundle1728473450_picture_item_small.png',
+        image: 'https://skycoach.gg/storage/uploads/products/salvations-edge-raid1718616296_picture_item_small.png',
         features: ['Alethonym Unlock', 'Campaign Legendary', 'Seasonal Gear Set', 'Early Title Progress']
     },
     // --- DUNGEONS: VESPER'S HOST ---
@@ -54,7 +54,7 @@ export const servicesData = [
         popular: true,
         description: "Complete the latest Vesper's Host dungeon. Obtain the Ice Breaker exotic and unique gear.",
         imageDescription: 'Destiny 2 Vespers Host',
-        image: 'https://skycoach.gg/storage/uploads/products/vesper-s-host-dungeon1728394467_picture_item_small.png',
+        image: 'https://skycoach.gg/storage/uploads/products/ice-breaker1728980735_picture_item_small.png',
         features: ['Full Completion', 'Ice Breaker Chance', 'Master Difficulty Option', 'Unique Armor Set']
     },
     {
@@ -255,7 +255,7 @@ export const servicesData = [
         popular: false,
         description: "Get the Swordbreaker Shotgun from Crota's End raid. Available as regular or Adept version.",
         imageDescription: 'Destiny 2 Swordbreaker Shotgun',
-        image: 'https://skycoach.gg/storage/uploads/products/swordbreaker1694215688_picture_item.webp',
+        image: 'https://skycoach.gg/storage/uploads/products/salvations-edge-raid1718616296_picture_item_small.png',
         features: ['Weapon Farm', 'Deepsight Option', 'Adept Available', 'Raid Gear']
     },
 
@@ -315,7 +315,7 @@ export const servicesData = [
         popular: false,
         description: "Return to the Dreadnaught and defeat Oryx. A classic raid experience with top-tier loot.",
         imageDescription: 'Destiny 2 Kings Fall Raid',
-        image: 'https://skycoach.gg/storage/uploads/products/kings-fall-raid1661275228_picture_item.png',
+        image: 'https://skycoach.gg/storage/uploads/products/salvations-edge-raid1718616296_picture_item_small.png',
         features: ['Touch of Malice Chance', 'Adept Weapons (Master)', 'Secret Chests', 'All Encounters']
     },
     {
@@ -491,7 +491,7 @@ export const servicesData = [
         popular: true,
         description: "Guaranteed 7-0 Flawless card. Visit the Lighthouse and claim your Adept loot.",
         imageDescription: 'Destiny 2 Trials Flawless',
-        image: 'https://skycoach.gg/storage/uploads/products/flawless-trials-of-osiris1633512700_picture_item_small.png',
+        image: 'https://skycoach.gg/storage/uploads/products/rufus-fury1678547593_picture_item_small.png',
         features: ['7-0 Flawless', 'Adept Weapon', 'Lighthouse Access', 'High K/D Boosters']
     },
     {
@@ -505,7 +505,7 @@ export const servicesData = [
         popular: true,
         description: "Get the Adept version of The Summoner Auto Rifle from Trials of Osiris.",
         imageDescription: 'Destiny 2 The Summoner',
-        image: 'https://skycoach.gg/storage/uploads/products/the-summoner-adept1647614059_picture_item_small.png',
+        image: 'https://skycoach.gg/storage/uploads/products/rufus-fury1678547593_picture_item_small.png',
         features: ['Adept Mods', 'God Roll Farm', 'Flawless Required', 'Solar Synergy']
     },
 
@@ -1133,7 +1133,7 @@ export const servicesData = [
         popular: false,
         description: "Full 50-wave completion of Onslaught mode on Legend difficulty.",
         imageDescription: 'Destiny 2 Onslaught Legend',
-        image: 'https://skycoach.gg/storage/uploads/products/onslaught-activity1712683935_picture_item_small.png',
+        image: 'https://skycoach.gg/storage/uploads/products/ice-breaker1728980735_picture_item_small.png',
         features: ['Brave Weapons', 'Trophies of Bravery', 'Ascendant Alloys', 'Emblem Unlock']
     },
     {
