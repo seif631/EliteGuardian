@@ -1,0 +1,22 @@
+export const categoryImages = {
+    'Raids': 'https://skycoach.gg/storage/uploads/products/master-salvations-edge-6-adept-weapons1719063979_picture_item_small.png',
+    'Trials': 'https://skycoach.gg/storage/uploads/products/flawless-seal-boost1658495345_picture_item.png',
+    'Dungeons': 'https://skycoach.gg/storage/uploads/products/ice-breaker1728980735_picture_item_small.png',
+    'PvP': 'https://skycoach.gg/storage/uploads/products/crucible-competitive-glory-boost1652314901_picture_item.png',
+    'PvE': 'https://skycoach.gg/storage/uploads/products/grandmaster-nightfall-clear-boost1656312901_picture_item.png',
+    'Exotics': 'https://skycoach.gg/storage/uploads/products/microcosm1717614073_picture_item_small.png',
+    'Crucible': 'https://skycoach.gg/storage/uploads/products/rufus-fury1678547593_picture_item_small.png',
+    'Titles': 'https://skycoach.gg/storage/uploads/products/slayer-seal1728473120_picture_item_small.png',
+    'Bundles': 'https://skycoach.gg/storage/uploads/products/epic-tdp-raid-free-normal1767692980_picture_item_small.png',
+    'Power': 'https://skycoach.gg/storage/uploads/products/power-level-light-level-boost1767693094_picture_item_small.png',
+    'Vanguard': 'https://skycoach.gg/storage/uploads/products/vex-mythoclast1644240176_picture_item_small.png',
+    'Gambit': 'https://skycoach.gg/storage/uploads/products/alethonym1728395567_picture_item_small.png',
+    'Seasonal': 'https://skycoach.gg/storage/uploads/products/salvations-edge-iconoclast-title1717794530_picture_item_small.png',
+    'Coaching': 'https://skycoach.gg/storage/uploads/products/salvations-edge-raid1718616296_picture_item_small.png',
+    'Account': 'https://skycoach.gg/storage/uploads/products/best-legendary-armor1752490060_picture_item_small.png',
+    'Collections': 'https://skycoach.gg/storage/uploads/products/renegades-arsenal-bundle1767693255_picture_item_small.png',
+    'Quests': 'https://skycoach.gg/storage/uploads/products/dual-destiny-mission1718022348_picture_item_small.png',
+    'Catalysts': 'https://skycoach.gg/storage/uploads/products/khvostov-7g-0x1717616183_picture_item_small.png',
+    'Triumphs': 'https://skycoach.gg/storage/uploads/products/atemporal-title1752839896_picture_item_small.png',
+    'default': 'https://skycoach.gg/storage/uploads/products/equilibrium-dungeon1765131339_picture_item_small.png'
+};

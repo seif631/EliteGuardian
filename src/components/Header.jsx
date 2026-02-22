@@ -133,7 +133,6 @@ const Header = () => {
                     </AnimatePresence>
                 </nav>
             </motion.header>
-            <Cart />
         </>
     );
 };

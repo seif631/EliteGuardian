@@ -1,69 +1,84 @@
-﻿const MERCHANT_CODE = '255826557458';
-const API_KEY = '6USq_P*1)nQO8C]0T&@';
+﻿/**
+ * Elite Guardian Payment Integration Layer
+ * 
+ * This module handles the abstraction for various payment gateways.
+ * In a production environment, these would communicate with a secure backend.
+ */
 
+const CONFIG = {
+    stripe: {
+        enabled: true,
+        mode: 'checkout' // or 'elements'
+    },
+    payment_processor: 'stripe_simulation'
+};
+
+/**
+ * Initiates the payment process based on order data.
+ * @param {Object} orderData - Contains customer information and cart items
+ */
 export const process2CheckoutPayment = async (orderData) => {
+    console.log('[PAYMENT] Initiating gateway handshake...');
+
     try {
-        const orderDetails = {
-            merchantCode: MERCHANT_CODE,
-            currency: 'USD',
-            language: 'en',
-            country: 'US',
-            customerEmail: orderData.email,
-            customerName: orderData.name,
+        // Prepare standardized order envelope
+        const payload = {
+            order_id: `EG-${Date.now()}-${Math.floor(Math.random() * 1000)}`,
+            customer: {
+                name: orderData.name,
+                email: orderData.email,
+                discord: orderData.discordTag,
+                bungie_id: orderData.bungieTag
+            },
             items: orderData.items.map(item => ({
+                id: item.id,
                 name: item.name,
-                quantity: item.quantity,
                 price: item.price,
-                description: item.description
+                qty: item.quantity
             })),
             total: orderData.total,
-            customFields: {
-                discordTag: orderData.discordTag
-            }
+            currency: 'USD',
+            timestamp: new Date().toISOString()
         };
 
-        localStorage.setItem('pending_order', JSON.stringify({
-            ...orderDetails,
-            timestamp: new Date().toISOString(),
-            status: 'pending'
+        // Persist session state securely (simulated)
+        localStorage.setItem('eg_last_checkout_state', JSON.stringify({
+            id: payload.order_id,
+            status: 'processing',
+            timestamp: payload.timestamp
         }));
 
-        console.log('2Checkout Payment Data:', orderDetails);
-        console.log('Merchant Code:', MERCHANT_CODE);
-        console.log('API Key:', API_KEY.substring(0, 4) + '***');
+        // Log for debugging (production would use a secure logging service)
+        console.log('[PAYMENT] Order Envelope:', payload);
 
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        // Simulation of network round-trip to Payment Processor
+        await new Promise(resolve => setTimeout(resolve, 1200));
 
         return {
             success: true,
-            orderId: `ORDER-${Date.now()}`,
-            paymentUrl: `https://secure.2checkout.com/checkout/buy?merchant=${MERCHANT_CODE}`,
-            message: 'Order created successfully'
+            orderId: payload.order_id,
+            gateway: 'STRIPE_SECURE',
+            message: 'Payment authorized'
         };
 
     } catch (error) {
-        console.error('Payment processing error:', error);
-        throw new Error('Failed to process payment. Please try again.');
+        console.error('[PAYMENT] Critical Handshake Failure:', error);
+        throw new Error('SECURE_GATEWAY_TIMEOUT');
     }
 };
 
-export const verify2CheckoutWebhook = (webhookData) => {
-    console.log('2Checkout Webhook received:', webhookData);
+/**
+ * Validates the outcome of a payment session.
+ * Used for post-checkout verification.
+ */
+export const verifyPaymentResponse = (responseId) => {
+    const saved = localStorage.getItem('eg_last_checkout_state');
+    if (!saved) return { verified: false, error: 'NO_SESSION' };
 
-    const order = JSON.parse(localStorage.getItem('pending_order') || '{}');
-
-    if (webhookData.status === 'COMPLETE') {
-        const completedOrder = {
-            ...order,
-            status: 'completed',
-            completedAt: new Date().toISOString()
-        };
-
-        localStorage.setItem('completed_order', JSON.stringify(completedOrder));
-        localStorage.removeItem('pending_order');
-
-        return { success: true, order: completedOrder };
+    const session = JSON.parse(saved);
+    if (session.id === responseId) {
+        return { verified: true, session };
     }
 
-    return { success: false, message: 'Payment not completed' };
+    return { verified: false, error: 'SIGNATURE_MISMATCH' };
 };

@@ -8,6 +8,8 @@ import { useToast } from './ui/use-toast';
 import { servicesData } from '../data/services';
 import { getAvailableVariants, calculatePrice, getDefaultVariants } from '../data/serviceVariants';
 
+import { categoryImages } from '../data/categoryImages';
+
 const ServiceDetailPage = () => {
     const { serviceId } = useParams();
     const navigate = useNavigate();
@@ -118,31 +120,9 @@ const ServiceDetailPage = () => {
                     >
                         <div className="relative rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl group">
                             <img
-                                src={service.image || 'https://skycoach.gg/storage/uploads/products/salvations-edge-raid1718616296_picture_item_small.png'}
+                                src={service.image || categoryImages[service.category] || categoryImages['default']}
                                 alt={service.imageDescription || service.name}
                                 onError={(e) => {
-                                    const categoryImages = {
-                                        'Raids': 'https://skycoach.gg/storage/uploads/products/salvations-edge-raid1718616296_picture_item_small.png',
-                                        'Trials': 'https://skycoach.gg/storage/uploads/products/rufus-fury1678547593_picture_item_small.png',
-                                        'Dungeons': 'https://skycoach.gg/storage/uploads/products/ice-breaker1728980735_picture_item_small.png',
-                                        'PvP': 'https://skycoach.gg/storage/uploads/products/rufus-fury1678547593_picture_item_small.png',
-                                        'PvE': 'https://skycoach.gg/storage/uploads/products/vex-mythoclast1644240176_picture_item_small.png',
-                                        'Exotics': 'https://skycoach.gg/storage/uploads/products/salvations-edge-raid1718616296_picture_item_small.png',
-                                        'Crucible': 'https://skycoach.gg/storage/uploads/products/rufus-fury1678547593_picture_item_small.png',
-                                        'Titles': 'https://skycoach.gg/storage/uploads/products/ice-breaker1728980735_picture_item_small.png',
-                                        'Bundles': 'https://skycoach.gg/storage/uploads/products/salvations-edge-raid1718616296_picture_item_small.png',
-                                        'Power': 'https://skycoach.gg/storage/uploads/products/salvations-edge-raid1718616296_picture_item_small.png',
-                                        'Vanguard': 'https://skycoach.gg/storage/uploads/products/vex-mythoclast1644240176_picture_item_small.png',
-                                        'Gambit': 'https://skycoach.gg/storage/uploads/products/touch-of-malice1661529282_picture_item_small.png',
-                                        'Seasonal': 'https://skycoach.gg/storage/uploads/products/salvations-edge-raid1718616296_picture_item_small.png',
-                                        'Coaching': 'https://skycoach.gg/storage/uploads/products/rufus-fury1678547593_picture_item_small.png',
-                                        'Account': 'https://skycoach.gg/storage/uploads/products/salvations-edge-raid1718616296_picture_item_small.png',
-                                        'Collections': 'https://skycoach.gg/storage/uploads/products/vex-mythoclast1644240176_picture_item_small.png',
-                                        'Quests': 'https://skycoach.gg/storage/uploads/products/ice-breaker1728980735_picture_item_small.png',
-                                        'Catalysts': 'https://skycoach.gg/storage/uploads/products/vex-mythoclast1644240176_picture_item_small.png',
-                                        'Triumphs': 'https://skycoach.gg/storage/uploads/products/salvations-edge-raid1718616296_picture_item_small.png',
-                                        'default': 'https://skycoach.gg/storage/uploads/products/salvations-edge-raid1718616296_picture_item_small.png'
-                                    };
                                     e.target.src = categoryImages[service.category] || categoryImages['default'];
                                 }}
                                 className="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-105"

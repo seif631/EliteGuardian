@@ -11,7 +11,7 @@ export const servicesData = [
         popular: true,
         description: "Complete all current major raids in one go: Salvation's Edge, Crota's End, and Root of Nightmares. Massive savings!",
         imageDescription: 'Destiny 2 Raid Bundle',
-        image: 'https://skycoach.gg/storage/uploads/products/salvations-edge-raid1718616296_picture_item_small.png',
+        image: 'https://skycoach.gg/storage/uploads/products/epic-tdp-raid-free-normal1767692980_picture_item_small.png',
         features: ['3 Major Raids', 'Multiple Exotics Chance', 'Full Armor Sets', '20% Bundle Discount']
     },
     {
@@ -25,7 +25,7 @@ export const servicesData = [
         popular: true,
         description: "Complete 1 month's worth of Pinnacle activities in a single week. Instant power cap reached.",
         imageDescription: 'Destiny 2 Power Bundle',
-        image: 'https://skycoach.gg/storage/uploads/products/salvations-edge-raid1718616296_picture_item_small.png',
+        image: 'https://skycoach.gg/storage/uploads/products/power-level-light-level-boost1767693094_picture_item_small.png',
         features: ['All Weekly Pinnacles', 'Artifact Leveling', 'Raid & Dungeon Runs', 'Extreme Fast Tracking']
     },
     {
@@ -39,7 +39,7 @@ export const servicesData = [
         popular: false,
         description: "Get everything you need for the new episode: Alethonym Exotic, full campaign clear, and first Title triumphs.",
         imageDescription: 'Destiny 2 Revenant Bundle',
-        image: 'https://skycoach.gg/storage/uploads/products/salvations-edge-raid1718616296_picture_item_small.png',
+        image: 'https://skycoach.gg/storage/uploads/products/seasonal-conquest1756110156_picture_item_small.png',
         features: ['Alethonym Unlock', 'Campaign Legendary', 'Seasonal Gear Set', 'Early Title Progress']
     },
     // --- DUNGEONS: VESPER'S HOST ---
@@ -54,7 +54,7 @@ export const servicesData = [
         popular: true,
         description: "Complete the latest Vesper's Host dungeon. Obtain the Ice Breaker exotic and unique gear.",
         imageDescription: 'Destiny 2 Vespers Host',
-        image: 'https://skycoach.gg/storage/uploads/products/ice-breaker1728980735_picture_item_small.png',
+        image: 'https://skycoach.gg/storage/uploads/products/vespers-host-dungeon1727425493_picture_item_small.png',
         features: ['Full Completion', 'Ice Breaker Chance', 'Master Difficulty Option', 'Unique Armor Set']
     },
     {
@@ -255,7 +255,7 @@ export const servicesData = [
         popular: false,
         description: "Get the Swordbreaker Shotgun from Crota's End raid. Available as regular or Adept version.",
         imageDescription: 'Destiny 2 Swordbreaker Shotgun',
-        image: 'https://skycoach.gg/storage/uploads/products/salvations-edge-raid1718616296_picture_item_small.png',
+        image: 'https://skycoach.gg/storage/uploads/products/swordbreaker1693671234_picture_item.png',
         features: ['Weapon Farm', 'Deepsight Option', 'Adept Available', 'Raid Gear']
     },
 
@@ -315,7 +315,7 @@ export const servicesData = [
         popular: false,
         description: "Return to the Dreadnaught and defeat Oryx. A classic raid experience with top-tier loot.",
         imageDescription: 'Destiny 2 Kings Fall Raid',
-        image: 'https://skycoach.gg/storage/uploads/products/salvations-edge-raid1718616296_picture_item_small.png',
+        image: 'https://skycoach.gg/storage/uploads/products/epic-desert-perpetual-raid1767692938_picture_item_small.png',
         features: ['Touch of Malice Chance', 'Adept Weapons (Master)', 'Secret Chests', 'All Encounters']
     },
     {
@@ -491,7 +491,7 @@ export const servicesData = [
         popular: true,
         description: "Guaranteed 7-0 Flawless card. Visit the Lighthouse and claim your Adept loot.",
         imageDescription: 'Destiny 2 Trials Flawless',
-        image: 'https://skycoach.gg/storage/uploads/products/rufus-fury1678547593_picture_item_small.png',
+        image: 'https://skycoach.gg/storage/uploads/products/flawless-trials-of-osiris-7-01654635051_picture_item_small.png',
         features: ['7-0 Flawless', 'Adept Weapon', 'Lighthouse Access', 'High K/D Boosters']
     },
     {
@@ -505,7 +505,7 @@ export const servicesData = [
         popular: true,
         description: "Get the Adept version of The Summoner Auto Rifle from Trials of Osiris.",
         imageDescription: 'Destiny 2 The Summoner',
-        image: 'https://skycoach.gg/storage/uploads/products/rufus-fury1678547593_picture_item_small.png',
+        image: 'https://skycoach.gg/storage/uploads/products/trials-of-osiris-armor-set1740578165_picture_item_small.png',
         features: ['Adept Mods', 'God Roll Farm', 'Flawless Required', 'Solar Synergy']
     },
 
@@ -1133,7 +1133,7 @@ export const servicesData = [
         popular: false,
         description: "Full 50-wave completion of Onslaught mode on Legend difficulty.",
         imageDescription: 'Destiny 2 Onslaught Legend',
-        image: 'https://skycoach.gg/storage/uploads/products/ice-breaker1728980735_picture_item_small.png',
+        image: 'https://skycoach.gg/storage/uploads/products/onslaught1711354952_picture_item_small.png',
         features: ['Brave Weapons', 'Trophies of Bravery', 'Ascendant Alloys', 'Emblem Unlock']
     },
     {
@@ -1191,7 +1191,7 @@ export const servicesData = [
         popular: false,
         description: "Complete all weekly Gambit bounties and matches for guaranteed pinnacle rewards and bonus Infamy.",
         imageDescription: 'Destiny 2 Gambit Weekly Boost',
-        image: 'https://skycoach.gg/storage/uploads/products/touch-of-malice1661529282_picture_item_small.png',
+        image: 'https://skycoach.gg/storage/uploads/products/gambit-infamy-rank-boost1652313123_picture_item.png',
         features: ['Pinnacle Gear', 'Bright Dust', 'Weekly Challenges', 'Seasonal Progress']
     },
     {
@@ -1307,7 +1307,7 @@ export const servicesData = [
         popular: true,
         description: "Farm the complete Brave Arsenal collection from Into the Light. Includes Luna's Howl and Recluse. Guaranteed god rolls available.",
         imageDescription: 'Destiny 2 Brave Arsenal Farming',
-        image: 'https://skycoach.gg/storage/uploads/products/salvations-edge-raid1718616296_picture_item_small.png',
+        image: 'https://skycoach.gg/storage/uploads/products/renegades-arsenal-bundle1767693255_picture_item_small.png',
         features: ['All Brave Weapons', 'God Rolls', 'Fast Farming', 'Seasonal Content']
     },
     {
@@ -1511,7 +1511,7 @@ export const servicesData = [
         popular: true,
         description: "Obtain the retired but prestigious Unbroken title through competitive mastery across multiple seasons.",
         imageDescription: 'Destiny 2 Unbroken Title Boost',
-        image: 'https://skycoach.gg/storage/uploads/products/crucible-competitive-glory-boost1652314901_picture_item.png',
+        image: 'https://skycoach.gg/storage/uploads/products/flawless-seal1622085025_picture_item_small.png',
         features: ['Unbroken Title', '3x Legend Ranks', 'Comp Mastery', 'Prestige Title']
     },
     {
@@ -1671,7 +1671,7 @@ export const servicesData = [
         popular: false,
         description: "Complete all weekly Vanguard Ops strike challenges for pinnacle drops and reputation gains.",
         imageDescription: 'Destiny 2 Vanguard Ops Boost',
-        image: 'https://skycoach.gg/storage/uploads/products/vex-mythoclast1644240176_picture_item_small.png',
+        image: 'https://skycoach.gg/storage/uploads/products/destiny-2-weekly-challenges1718616636_picture_item_small.png',
         features: ['Pinnacle Gear', 'Strike Loot', 'Vanguard Tokens', 'Weekly Completion']
     },
     {
@@ -1685,7 +1685,7 @@ export const servicesData = [
         popular: true,
         description: "Farm currently rotating Nightfall weapons for your perfect god roll.",
         imageDescription: 'Destiny 2 Nightfall Farming',
-        image: 'https://skycoach.gg/storage/uploads/products/nightfall-weapons-farm1634312567_picture_item.png',
+        image: 'https://skycoach.gg/storage/uploads/products/nightfall-the-ordeal1621637210_picture_item_small.png',
         features: ['God Roll Farm', 'Adept Option', 'Multiple Runs', 'Specific Weapon']
     },
 
@@ -1701,7 +1701,7 @@ export const servicesData = [
         popular: false,
         description: "Complete Valor rank reset for powerful rewards, ornaments, and Crucible prestige.",
         imageDescription: 'Destiny 2 Valor Rank Boost',
-        image: 'https://skycoach.gg/storage/uploads/products/crucible-valor-rank-boost1652312901_picture_item.png',
+        image: 'https://skycoach.gg/storage/uploads/products/flawless-desert-perpetual-raid1753192041_picture_item_small.png',
         features: ['Full Rank Reset', 'Crucible Weapons', 'Powerful Engrams', 'Ornaments']
     },
     {
@@ -1715,7 +1715,7 @@ export const servicesData = [
         popular: false,
         description: "Reset your Gambit Infamy rank for the unique seasonal shader and emblem.",
         imageDescription: 'Destiny 2 Infamy Rank Boost',
-        image: 'https://skycoach.gg/storage/uploads/products/gambit-infamy-rank-boost1652313123_picture_item.png',
+        image: 'https://skycoach.gg/storage/uploads/products/givers-blessing1752750208_picture_item_small.png',
         features: ['Infamy Reset', 'Gambit Weapons', 'Ornaments', 'Shader Unlock']
     },
     {
@@ -1729,7 +1729,7 @@ export const servicesData = [
         popular: false,
         description: "Level up Banshee-44 reputation for weapon patterns, enhancement cores and alloys.",
         imageDescription: 'Destiny 2 Gunsmith Boost',
-        image: 'https://skycoach.gg/storage/uploads/products/gunsmith-rank-boost1652313345_picture_item.png',
+        image: 'https://skycoach.gg/storage/uploads/products/guardian-ranks1695686907_picture_item.png',
         features: ['Weapon Patterns', 'Enhancement Cores', 'Mod Components', 'Fast Leveling']
     },
 
@@ -1745,7 +1745,7 @@ export const servicesData = [
         popular: true,
         description: "Full Season Pass completion to level 100. Unlocks all seasonal cosmetics and the exotic weapon.",
         imageDescription: 'Destiny 2 Season Pass Boost',
-        image: 'https://skycoach.gg/storage/uploads/products/season-pass-rank-boost1652313567_picture_item.png',
+        image: 'https://skycoach.gg/storage/uploads/products/praxic-time-trials1771237723_picture_item_small.png',
         features: ['Level 1-100', 'All Rewards', 'Seasonal Exotic', 'Bright Dust']
     },
     {
@@ -1759,7 +1759,7 @@ export const servicesData = [
         popular: false,
         description: "Complete all active weekly and seasonal challenges for the maximum Bright Dust and XP payout.",
         imageDescription: 'Destiny 2 Seasonal Rewards',
-        image: 'https://skycoach.gg/storage/uploads/products/destiny-2-seasonal-challenges-boost1656312456_picture_item.png',
+        image: 'https://skycoach.gg/storage/uploads/products/seasonal-conquest1756110156_picture_item_small.png',
         features: ['All Challenges', 'Bright Dust', 'Large XP Bonus', 'Fast Completion']
     },
 
@@ -1775,7 +1775,7 @@ export const servicesData = [
         popular: true,
         description: "Fill the exotic gaps in your vault. We farm all currently obtainable exotic weapons for your collection.",
         imageDescription: 'Destiny 2 Exotic Arsenal Boost',
-        image: 'https://skycoach.gg/storage/uploads/products/exotic-weapon-collection-bundle1652315123_picture_item.png',
+        image: 'https://skycoach.gg/storage/uploads/products/free-exotic-class-items-bundle1767693210_picture_item_small.png',
         features: ['All Exotics', 'Quest Completions', 'Raid Exotics', 'Monument Purchases']
     },
     {
@@ -1789,7 +1789,7 @@ export const servicesData = [
         popular: false,
         description: "Unlock all weapon patterns from Salvations Edge, Crotas End, and Root of Nightmares.",
         imageDescription: 'Destiny 2 Raid Collection Boost',
-        image: 'https://skycoach.gg/storage/uploads/products/raid-weapons-unlock-bundle1654312678_picture_item.png',
+        image: 'https://skycoach.gg/storage/uploads/products/renegades-arsenal-bundle1763719940_picture_bg.png',
         features: ['All Raid Weapons', 'Multiple Raids', 'God Rolls', 'Badge Progress']
     },
 
@@ -1805,7 +1805,7 @@ export const servicesData = [
         popular: true,
         description: "Target farm Lost Sectors for specific exotic armor pieces with 65+ total stats.",
         imageDescription: 'Destiny 2 Exotic Armor Farm',
-        image: 'https://skycoach.gg/storage/uploads/products/exotic-armor-set-farm1652313789_picture_item.png',
+        image: 'https://skycoach.gg/storage/uploads/products/renegades-exotic-armor-bundle1767693236_picture_item_small.png',
         features: ['Specific Slot', 'High Stats', 'New Exotics', 'Multiple Runs']
     },
     {
@@ -1819,7 +1819,7 @@ export const servicesData = [
         popular: false,
         description: "Fully masterwork your exotic armor piece to tier 10. Includes all Ascendant Shards and Materials.",
         imageDescription: 'Destiny 2 Masterwork Armor Boost',
-        image: 'https://skycoach.gg/storage/uploads/products/armor-masterwork-boost1652313901_picture_item.png',
+        image: 'https://skycoach.gg/storage/uploads/products/equilibrium-armor1765886338_picture_item_small.png',
         features: ['Tier 10', 'All Materials', 'Stat Boost', 'Energy Capacity']
     },
 
@@ -1835,7 +1835,7 @@ export const servicesData = [
         popular: false,
         description: "Complete Master difficulty Nightmare Hunts on the Moon for localized rare materials and armor chances.",
         imageDescription: 'Destiny 2 Nightmare Hunt Boost',
-        image: 'https://skycoach.gg/storage/uploads/products/master-nightmare-hunt-clear1634313456_picture_item.png',
+        image: 'https://skycoach.gg/storage/uploads/products/master-nightmare-hunt1652315567_picture_item.png',
         features: ['Master Difficulty', 'Enhancement Prisms', 'Exotic Armor', 'Moon Activity']
     },
 
@@ -1851,7 +1851,7 @@ export const servicesData = [
         popular: false,
         description: "Comprehensive account overhaul: max power level, all weekly activities, and seasonal triumphs unlocked.",
         imageDescription: 'Destiny 2 Full Account Boost',
-        image: 'https://skycoach.gg/storage/uploads/products/account-power-level-boost1652314123_picture_item.png',
+        image: 'https://skycoach.gg/storage/uploads/products/best-legendary-armor1752490060_picture_item_small.png',
         features: ['Full Service', 'All Activities', 'Max Power', 'All Seasonal Content']
     },
     {
@@ -1865,7 +1865,7 @@ export const servicesData = [
         popular: false,
         description: "Expert setup for Cross-Save between Steam, Xbox, and PlayStation. Guaranteed safe data handling.",
         imageDescription: 'Destiny 2 Cross-Save Setup',
-        image: 'https://skycoach.gg/storage/uploads/products/cross-play-setup-service1652314345_picture_item.png',
+        image: 'https://skycoach.gg/storage/uploads/products/guardian-ranks1680206419_picture_bg.png',
         features: ['Platform Transfer', 'Safe Setup', 'Data Migration', 'Account Linking']
     },
 
@@ -1881,7 +1881,7 @@ export const servicesData = [
         popular: false,
         description: "Master the Moon's challenges, including flawless Pit of Heresy and specific time trials.",
         imageDescription: 'Destiny 2 Harbinger Title Boost',
-        image: 'https://skycoach.gg/storage/uploads/products/harbinger-seal-boost1631313456_picture_item.png',
+        image: 'https://skycoach.gg/storage/uploads/products/atemporal-title1752839896_picture_item_small.png',
         features: ['Harbinger Title', 'Dreaming City', 'All Challenges', 'Secret Triumphs']
     },
     {
@@ -1895,7 +1895,7 @@ export const servicesData = [
         popular: false,
         description: "Complete all Garden of Salvation raid triumphs, challenges, and the Divinity quest for the Enlightened title.",
         imageDescription: 'Destiny 2 Enlightened Title Boost',
-        image: 'https://skycoach.gg/storage/uploads/products/enlightened-seal-boost1631313678_picture_item.png',
+        image: 'https://skycoach.gg/storage/uploads/products/garden-of-salvation1621636676_picture_item_small.png',
         features: ['Enlightened Title', 'All Challenges', 'Flawless Run', 'Divinity Required']
     },
 
@@ -1911,7 +1911,7 @@ export const servicesData = [
         popular: true,
         description: "Join a 1-on-1 private coaching session with a Top 500 Trials player to perfect your movement, aim, and strategy.",
         imageDescription: 'Destiny 2 PvP Pro Coaching',
-        image: 'https://skycoach.gg/storage/uploads/products/pvp-pro-coaching-service1628312901_picture_item.png',
+        image: 'https://skycoach.gg/storage/uploads/products/flawless-trials-of-osiris-7-01654635051_picture_item_small.png',
         features: ['Pro Player', 'Personalized Tips', 'VOD Review', 'Improvement Plan']
     },
     {
@@ -1925,7 +1925,7 @@ export const servicesData = [
         popular: false,
         description: "Learn high-level raid mechanics with professional sherpas. This specialized session ensures you master every role.",
         imageDescription: 'Destiny 2 Raid Sherpa Training',
-        image: 'https://skycoach.gg/storage/uploads/products/raid-sherpa-mechanics-coaching1628313123_picture_item.png',
+        image: 'https://skycoach.gg/storage/uploads/products/equilibrium-praxic-title1767692695_picture_item_small.png',
         features: ['Full Explanation', 'All Mechanics', 'Role Training', 'Patient Teaching']
     }
 ];
